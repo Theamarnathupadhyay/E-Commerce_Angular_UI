@@ -1,0 +1,271 @@
+<div class="container">
+
+  <p class="note">Note: An extra feature has been added to allow users to compare up to 3 products side by side for easy
+    comparison.</p>
+
+  <h1>Summary of this project</h1>
+
+  <section class="component-overview">
+    <h2>Component Overview</h2>
+
+    <div class="feature">
+      <h3>1. Product Listing</h3>
+      <ul>
+        <li>Fetches and displays products using the <code>ProductService</code>.</li>
+        <li>Products are displayed in a card format with details like image, title, category, price, and rating.</li>
+        <li>Displays an error message if fetching fails.</li>
+      </ul>
+    </div>
+
+    <div class="feature">
+      <h3>2. Sorting and Filtering</h3>
+      <div class="sorting">
+        <h6>Sorting:</h6>
+        <p>Allows sorting by price (low to high or high to low) .</p>
+      </div>
+      <div class="filtering">
+        <h6>Filtering:</h6>
+        <p>Filters by Rating, Category, and Price Range.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <h3>3. Product Comparison</h3>
+      <p>Allows users to compare up to three products side by side using the <code>app-product-comparison</code>
+        component.</p>
+    </div>
+
+    <div class="feature">
+      <h3>4. Responsive Design</h3>
+      <p>Uses CSS Grid for a responsive layout that adapts to desktop and mobile screens.</p>
+    </div>
+
+    <div class="feature">
+      <h3>5. Loading and No Data States</h3>
+      <p>Shows a loading spinner while fetching products and a message when no products are available.</p>
+    </div>
+
+    <div class="feature">
+      <h3>6. User Interaction</h3>
+      <p>Each product card includes buttons for viewing more details and adding to the comparison list.</p>
+    </div>
+
+    <div class="feature">
+      <h3>7. Event Handling</h3>
+      <p>Handles sorting, filtering, and product selection events to update the displayed list of products.</p>
+    </div>
+  </section>
+
+  <section class="tech-versions">
+    <h2>Technology Versions</h2>
+    <ul>
+      <li>
+        <h6>Node.js:</h6> Version 14.x or higher
+      </li>
+      <li>
+        <h6>npm:</h6> Version 6.x or higher
+      </li>
+      <li>
+        <h6>Angular Framework:</h6> Version 12.2.18
+      </li>
+      <li>
+        <h6>Angular CLI:</h6> Version 12.2.18
+      </li>
+      <li>
+        <h6>TypeScript:</h6> Version 4.3.5
+      </li>
+      <li>
+        <h6>Angular Material:</h6> Version 12.2.13
+      </li>
+      <li>
+        <h6>Bootstrap:</h6> Version 5.3.3
+      </li>
+      <li>
+        <h6>rxjs:</h6> Version 6.6.0
+      </li>
+    </ul>
+
+    <h3>Required Versions Summary:</h3>
+    <ul>
+      <li>
+        <h6>Node.js:</h6> 14.x or higher
+      </li>
+      <li>
+        <h6>npm:</h6> 6.x or higher
+      </li>
+      <li>
+        <h6>Angular CLI:</h6> 12.2.18
+      </li>
+      <li>
+        <h6>TypeScript:</h6> 4.3.5
+      </li>
+      <li>
+        <h6>Angular Framework:</h6> 12.2.18
+      </li>
+    </ul>
+  </section>
+  <div class="folder-structure">
+    <ul>
+      <li class="folder">E-Commerce
+        <ul>
+          <li class="folder">src
+            <ul>
+              <li class="folder">app
+                <ul>
+                  <li class="folder">about
+                    <ul>
+                      <li>about.component.ts</li>
+                      <li>about.component.html</li>
+                      <li>about.component.css</li>
+                    </ul>
+                  </li>
+                  <li class="folder">contact
+                    <ul>
+                      <li>contact.component.ts</li>
+                      <li>contact.component.html</li>
+                      <li>contact.component.css</li>
+                    </ul>
+                  </li>
+                  <li class="folder">footer
+                    <ul>
+                      <li>footer.component.ts</li>
+                      <li>footer.component.html</li>
+                      <li>footer.component.css</li>
+                    </ul>
+                  </li>
+                  <li class="folder">navbar
+                    <ul>
+                      <li>navbar.component.ts</li>
+                      <li>navbar.component.html</li>
+                      <li>navbar.component.css</li>
+                    </ul>
+                  </li>
+                  <li class="folder">product-comparison
+                    <ul>
+                      <li>product-comparison.component.ts</li>
+                      <li>product-comparison.component.html</li>
+                      <li>product-comparison.component.css</li>
+                    </ul>
+                  </li>
+                  <li class="folder">product-detail-dialog
+                    <ul>
+                      <li>product-detail-dialog.component.ts</li>
+                      <li>product-detail-dialog.component.html</li>
+                      <li>product-detail-dialog.component.css</li>
+                    </ul>
+                  </li>
+                  <li class="folder">view-products
+                    <ul>
+                      <li>view-products.component.ts</li>
+                      <li>view-products.component.html</li>
+                      <li>view-products.component.css</li>
+                    </ul>
+                  </li>
+                  <li class="folder">filters
+                    <ul>
+                      <li class="folder">product-category-filter
+                        <ul>
+                          <li>product-category-filter.component.ts</li>
+                          <li>product-category-filter.component.html</li>
+                          <li>product-category-filter.component.css</li>
+                        </ul>
+                      </li>
+                      <li class="folder">product-price-range-filter
+                        <ul>
+                          <li>product-price-range-filter.component.ts</li>
+                          <li>product-price-range-filter.component.html</li>
+                          <li>product-price-range-filter.component.css</li>
+                        </ul>
+                      </li>
+                      <li class="folder">product-rating-filter
+                        <ul>
+                          <li>product-rating-filter.component.ts</li>
+                          <li>product-rating-filter.component.html</li>
+                          <li>product-rating-filter.component.css</li>
+                        </ul>
+                      </li>
+                      <li class="folder">product-sorting
+                        <ul>
+                          <li>product-sorting.component.ts</li>
+                          <li>product-sorting.component.html</li>
+                          <li>product-sorting.component.css</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="folder">cart
+                    <ul>
+                      <li>cart.component.ts</li>
+                      <li>cart.component.html</li>
+                      <li>cart.component.css</li>
+                    </ul>
+                  </li>
+                  <li class="folder">checkout
+                    <ul>
+                      <li>checkout.component.ts</li>
+                      <li>checkout.component.html</li>
+                      <li>checkout.component.css</li>
+                    </ul>
+                  </li>
+                  <li class="folder">user-profile
+                    <ul>
+                      <li>user-profile.component.ts</li>
+                      <li>user-profile.component.html</li>
+                      <li>user-profile.component.css</li>
+                    </ul>
+                  </li>
+                  <li class="folder">auth
+                    <ul>
+                      <li class="folder">login
+                        <ul>
+                          <li>login.component.ts</li>
+                          <li>login.component.html</li>
+                          <li>login.component.css</li>
+                        </ul>
+                      </li>
+                      <li class="folder">register
+                        <ul>
+                          <li>register.component.ts</li>
+                          <li>register.component.html</li>
+                          <li>register.component.css</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="folder">service
+                    <ul>
+                      <li>product.service.ts</li>
+                      <li>cart.service.ts</li>
+                      <li>auth.service.ts</li>
+                      <li>checkout.service.ts</li>
+                      <li>user-profile.service.ts</li>
+                    </ul>
+                  </li>
+                  <li>app-routing.module.ts</li>
+                  <li>app.component.ts</li>
+                  <li>app.component.html</li>
+                  <li>app.component.css</li>
+                  <li>app.module.ts</li>
+                  <li>main.ts</li>
+                  <li>styles.css</li>
+                </ul>
+              </li>
+              <li class="folder">environments
+                <ul>
+                  <li>environment.ts</li>
+                  <li>environment.prod.ts</li>
+                </ul>
+              </li>
+              <li>index.html</li>
+              <li>polyfills.ts</li>
+            </ul>
+          </li>
+          <li>angular.json</li>
+          <li>package.json</li>
+          <li>tsconfig.json</li>
+          <li>README.md</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

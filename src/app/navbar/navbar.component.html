@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <div class="logo">E-Commerce</div>
+  <input type="checkbox" class="hamburger-checkbox" id="hamburger-toggle">
+  <label class="hamburger" for="hamburger-toggle">
+    <div></div>
+    <div></div>
+    <div></div>
+  </label>
+  <div class="menu">
+    <a routerLink="/viewProduct" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">All
+      product</a>
+    <a routerLink="/about" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">About</a>
+    <a routerLink="/contact" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Contact</a>
+  </div>
+</nav>

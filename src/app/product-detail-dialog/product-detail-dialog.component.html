@@ -1,0 +1,34 @@
+<h2 mat-dialog-title class="dialog-title">Product Details</h2>
+
+<mat-dialog-content class="product-detail">
+  <div class="product-detail-container">
+    <div class="product-left">
+      <div class="product-image-container">
+        <img class="product-image" [src]="data.product.thumbnail" alt="{{ data.product.title }}" />
+      </div>
+      <p class="product-price">${{ data.product.price }}</p>
+      <div class="product-rating">
+        <strong>Rating:</strong>
+        <span class="rating-stars">
+          <ng-container *ngFor="let star of getStars(data.product.rating)">
+            <i [ngClass]="{
+                  'star-filled': star.filled === 1,
+                  'star-half': star.filled === 0.5,
+                  'star-empty': star.filled === 0
+                }"></i>
+          </ng-container>
+        </span>
+      </div>
+    </div>
+    <div class="product-right">
+      <h3 class="product-title">{{ data.product.title }}</h3>
+      <p class="product-category"><strong>Category:</strong> {{ data.product.category | titlecase }}</p>
+      <p class="product-category"><strong>Availability:</strong> {{ data.product.availabilityStatus }}</p>
+      <p class="product-description"><strong>Description:</strong> {{ data.product.description }}</p>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close class="close-button">Close</button>
+</mat-dialog-actions>

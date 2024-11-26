@@ -1,0 +1,140 @@
+.comparison-container {
+  padding: 30px;
+  background-color: #f0f4f8;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeIn 0.5s ease-out;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: slideInDown 1s ease;
+}
+
+
+.comparison-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.comparison-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 320px;
+  transition: transform 0.3s ease;
+}
+
+.comparison-card:hover {
+  transform: scale(1.05);
+}
+
+.product-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+
+.product-name:hover {
+  color: #2a9d8f;
+}
+
+.product-details {
+  margin-top: 20px;
+}
+
+.product-attribute {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.no-products {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+  padding: 40px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .comparison-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .comparison-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .product-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .product-name {
+    font-size: 1rem;
+  }
+
+  .product-attribute {
+    font-size: 0.875rem;
+  }
+}

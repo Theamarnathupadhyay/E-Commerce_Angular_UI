@@ -1,0 +1,8 @@
+<div class="filter-rating">
+  <label for="star-rating">Filter with Rating:</label>
+  <div id="star-rating" class="star-rating">
+    <span *ngFor="let star of stars; let i = index" (click)="selectStar(i)" [class.filled]="star" class="star">
+      &#9733;
+    </span>
+  </div>
+</div>

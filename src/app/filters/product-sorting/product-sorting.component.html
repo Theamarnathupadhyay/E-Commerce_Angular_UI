@@ -1,0 +1,8 @@
+<div class="sorting-options">
+  <label for="product-sorting">Sort By:</label>
+  <select id="product-sorting" [(ngModel)]="selectedSorting" (change)="onSortingChange()">
+    <option value="">Default</option>
+    <option value="priceLowToHigh">Price: Low to High</option>
+    <option value="priceHighToLow">Price: High to Low</option>
+  </select>
+</div>

@@ -1,0 +1,82 @@
+<!-- Action container with sorting and filter button -->
+<div class="action-container">
+  <!-- Product sorting component that emits a sort change event -->
+  <app-product-sorting (sortChange)="onSortChange($event)"></app-product-sorting>
+  <div class="button-container">
+    <!-- Button to open the offcanvas filter panel -->
+    <button mat-flat-button class="custom-button" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+      Apply filter
+    </button>
+  </div>
+</div>
+<app-product-comparison [products]="selectedProducts"></app-product-comparison>
+<!-- Offcanvas filter panel that slides in from the right -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">Filters</h5>
+    <!-- Button to close the filter panel -->
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <!-- Filter components for rating, category, and price range -->
+    <app-product-rating-filter (ratingSelected)="onRatingSelected($event)"></app-product-rating-filter>
+    <app-product-category-filter (categorySelected)="onCategorySelected($event)"></app-product-category-filter>
+    <app-product-price-range-filter
+      (priceRangeSelected)="onPriceRangeSelected($event)"></app-product-price-range-filter>
+  </div>
+</div>
+
+<!-- Product list section -->
+<div class="product-list">
+
+  <!-- Error message display, if any error occurs while loading products -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Loop through the products and display each product card -->
+  <div *ngFor="let product of productList" class="product-card">
+    <!-- Display product image or a placeholder if no image is available -->
+    <img class="product-image" [src]="product.thumbnail || 'assets/placeholder-image.png'" [alt]="product.title"
+      loading="lazy" />
+    <div class="product-details">
+      <!-- Display product title, category, and price -->
+      <h3>{{ product.title }}</h3>
+      <p class="category">{{ product.category | titlecase }}</p>
+      <p class="price">${{ product.price | number: '1.2-2' }}</p>
+
+      <div class="product-rating">
+        <!-- Display product rating as stars -->
+        <span class="rating-stars">
+          <ng-container *ngFor="let star of getStars(product.rating)">
+            <i [ngClass]="{
+                  'star-filled': star.filled === 1,
+                  'star-half': star.filled === 0.5,
+                  'star-empty': star.filled === 0
+                }"></i>
+          </ng-container>
+        </span>
+      </div>
+    </div>
+    <!-- Overlay with a button to view product details -->
+    <div class="product-item">
+
+      <div class="hover-overlay">
+        <button class="show-details" (click)="openProductDetail(product)">Show Details</button>
+        <button class="show-details" (click)="selectProduct(product)">Add to Comparison</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Loading spinner while products are being fetched -->
+  <div *ngIf="isLoading" class="loading-container">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Message to show when there are no more products to load -->
+  <div class="no-more-data" *ngIf="!isLoading && allLoaded && !errorMessage">
+    No more products to show.
+  </div>
+</div>

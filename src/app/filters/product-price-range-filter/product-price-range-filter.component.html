@@ -1,0 +1,9 @@
+<div class="price-range-filter">
+  <label for="price-range">Filter by Price Range:</label>
+  <div class="slider-container">
+    <input type="range" id="min-price" [min]="0" [max]="maxPrice" [(ngModel)]="minPrice" (input)="onPriceChange()" />
+  </div>
+  <div class="price-display">
+    <span>Min: {{ minPrice | currency }}</span>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="comparison-container" *ngIf="products.length > 0">
+  <h2>Compare products</h2>
+
+  <div class="comparison-wrapper">
+    <div class="comparison-card" *ngFor="let product of products">
+      <div class="product-header">
+        <img class="product-image" [src]="product.thumbnail || 'assets/placeholder-image.png'" [alt]="product.title"
+          loading="lazy" />
+        <span class="product-name">{{ product.name }}</span>
+      </div>
+
+      <div class="product-details">
+        <div class="product-attribute">
+          <strong>Price:</strong> {{ product.price | currency }}
+        </div>
+
+        <div class="product-attribute">
+          <strong>Description:</strong> {{ product.description }}
+        </div>
+
+        <div class="product-attribute" *ngIf="product.rating !== undefined">
+          <strong>Rating:</strong> {{ product.rating }} / 5
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

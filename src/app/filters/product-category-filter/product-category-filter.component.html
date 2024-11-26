@@ -1,0 +1,7 @@
+<div class="category-filter">
+  <label for="category" class="filter-label">Filter by Category</label>
+  <select id="category" [(ngModel)]="selectedCategory" (change)="onCategoryChange()" class="custom-select">
+    <option value="">All Categories</option>
+    <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+  </select>
+</div>
